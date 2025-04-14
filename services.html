@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Vu Phung Trung Kien</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Include Navigation -->
+    <div id="navbar-container"></div>
+
+    <!-- Header -->
+    <section class="hero" style="min-height: 40vh; justify-content: center">
+      <h1
+        class="hero-title"
+        style="color: var(--primary-color); font-size: 90px; letter-spacing: 3px"
+      >
+        Services
+      </h1>
+    </section>
+
+    <!-- Services Description -->
+    <section>
+      <p class="section-text">
+        Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+        lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+        pharetra Lorem ipsum dolor sit amet consectetur. Tristique amet sed
+        massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
+        Turpis tempus pharetra Lorem ipsum dolor sit amet consectetur.
+        Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
+        convallis pretium. Turpis
+      </p>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+      // Load navbar and footer dynamically
+      fetch("navbar-footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // Insert navbar
+          const navbar = doc.querySelector("nav");
+          document.getElementById("navbar-container").appendChild(navbar);
+
+          // Insert footer
+          const footer = doc.querySelector("footer");
+          document.getElementById("footer-container").appendChild(footer);
+
+          // Hamburger functionality
+          document
+            .querySelector(".hamburger")
+            ?.addEventListener("click", () => {
+              document.querySelector(".nav-links").classList.toggle("active");
+            });
+
+          document.querySelectorAll(".nav-links a").forEach((link) => {
+            link.addEventListener("click", () => {
+              document.querySelector(".nav-links").classList.remove("active");
+            });
+          });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Vu Phung Trung Kien</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Include navigation -->
+    <div id="navbar-container"></div>
+
+    <!-- About Header -->
+    <section class="hero" style="min-height: 40vh; justify-content: center">
+      <h1
+        class="hero-title"
+        style="
+          color: var(--primary-color);
+          font-size: 90px;
+          letter-spacing: 3px;
+        "
+      >
+        About Me
+      </h1>
+    </section>
+
+    <!-- About Content Blocks -->
+    <!-- Paragraph 1: Square -->
+    <section class="about about-section-1">
+      <div class="about-text about-text-1">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra lorem ipsum dolor sit amet consectetur.
+        </p>
+      </div>
+      <div class="about-image about-image-1">
+        <div class="placeholder-square"></div>
+      </div>
+    </section>
+
+    <!-- Paragraph 2: Circle -->
+    <section class="about about-section-2">
+      <div class="about-image about-image-2">
+        <div class="placeholder-circle"></div>
+      </div>
+      <div class="about-text about-text-2">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra lorem ipsum dolor sit amet consectetur.
+        </p>
+      </div>
+    </section>
+
+    <!-- Paragraph 3: Triangle -->
+    <section class="about about-section-3">
+      <div class="about-text about-text-3">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra lorem ipsum dolor sit amet consectetur.
+        </p>
+      </div>
+      <div class="about-image about-image-3">
+        <div class="placeholder-triangle"></div>
+      </div>
+    </section>
+
+    <!-- Include footer -->
+    <div id="footer-container"></div>
+
+    <script>
+      // Load navbar and footer
+      fetch("navbar-footer.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // Insert navbar
+          const navbar = doc.querySelector("nav");
+          document.getElementById("navbar-container").appendChild(navbar);
+
+          // Insert footer
+          const footer = doc.querySelector("footer");
+          document.getElementById("footer-container").appendChild(footer);
+
+          // Reattach event listeners
+          document
+            .querySelector(".hamburger")
+            ?.addEventListener("click", () => {
+              document.querySelector(".nav-links").classList.toggle("active");
+            });
+
+          document.querySelectorAll(".nav-links a").forEach((link) => {
+            link.addEventListener("click", () => {
+              document.querySelector(".nav-links").classList.remove("active");
+            });
+          });
+        });
+    </script>
+  </body>
+</html>
