@@ -195,7 +195,6 @@
         padding: 8px; /* Border thickness */
         background: linear-gradient(45deg, var(--primary-color), #ff9a00, #ff0d6e, #d400ff);
         background-size: 300% 300%;
-        animation: gradient-shift 6s ease infinite;
       }
 
       /* Reusable Page Header Title */
