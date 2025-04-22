@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Vu Phung Trung Kien</title>
+    <title>Projects - Vu Phung Trung Kien</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
@@ -15,75 +15,79 @@
     />
   </head>
   <body>
-    <!-- Include Navigation -->
+    <!-- Include navigation -->
     <div id="navbar-container"></div>
 
-    <!-- Services Header -->
-    <h1 class="page-header-title">Services</h1>
+    <h1 class="page-header-title">My Projects</h1>
 
-    <!-- Services Content -->
-    <section class="services-content">
-      <div class="service-item">
-        <p class="service-description-page">
+    <!-- Projects Content Blocks -->
+    <!-- Project 1 -->
+    <section class="project project-section-1">
+      <div class="project-text project-text-1">
+        <p>
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
           lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
           pharetra Lorem ipsum dolor sit amet consectetur. Tristique amet sed
           massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
+          Turpis tempus pharetra Lorem ipsum dolor sit amet consectetur.
+          Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
+          convallis pretium. Turpis tempus pharetra Lorem ipsum dolor sit amet
+          consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet
+          donec morbi convallis pretium. Turpis
         </p>
-        <div class="service-icon">
-          <span class="material-icons" style="font-size: 60px; color: white"
-            >design_services</span
-          >
-        </div>
       </div>
-      <div class="service-item">
-        <p class="service-description-page">
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetra Lorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-        </p>
-        <div class="service-icon">
-          <span class="material-icons" style="font-size: 60px; color: white"
-            >web</span
-          >
-        </div>
-      </div>
-      <div class="service-item">
-        <p class="service-description-page">
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetra Lorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-        </p>
-        <div class="service-icon">
-          <span class="material-icons" style="font-size: 60px; color: white"
-            >phone_iphone</span
-          >
-        </div>
-      </div>
-      <div class="service-item">
-        <p class="service-description-page">
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetra Lorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-        </p>
-        <div class="service-icon">
-          <span class="material-icons" style="font-size: 60px; color: white"
-            >palette</span
-          >
-        </div>
+      <div class="project-image project-image-1">
+        <img
+          src="https://i.imgur.com/KyYRaRX.png"
+          alt="Description of project 1"
+          class="project-img"
+        />
       </div>
     </section>
 
-    <!-- Include Footer -->
+    <!-- Project 2 -->
+    <section class="project project-section-2">
+      <div class="project-image project-image-2">
+        <img
+          src="https://i.imgur.com/NPOeCKb.png"
+          alt="Description of project 2"
+          class="project-img"
+        />
+      </div>
+      <div class="project-text project-text-2">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra lorem ipsum dolor sit amet consectetur.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project 3 -->
+    <section class="project project-section-3">
+      <div class="project-text project-text-3">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra lorem ipsum dolor sit amet consectetur.
+        </p>
+      </div>
+      <div class="project-image project-image-3">
+        <img
+          src="https://i.imgur.com/qJfZzr0.png"
+          alt="Description of project 3"
+          class="project-img"
+        />
+      </div>
+    </section>
+
+    <!-- Include footer -->
     <div id="footer-container"></div>
 
     <script>
-      // Load navbar and footer dynamically
+      // Load navbar and footer
       fetch("navbar-footer.html")
-        .then((res) => res.text())
+        .then((response) => response.text())
         .then((html) => {
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, "text/html");
@@ -96,7 +100,7 @@
           const footer = doc.querySelector("footer");
           document.getElementById("footer-container").appendChild(footer);
 
-          // Hamburger functionality
+          // Reattach event listeners
           document
             .querySelector(".hamburger")
             ?.addEventListener("click", () => {

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedbacks - Vu Phung Trung Kien</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <h1 class="page-header-title">Feedbacks</h1>
+
+    <!-- Feedbacks Section -->
+    <section class="feedbacks" id="feedbacks">
+        <div
+          class="feedbacks-scroll-area"
+          style="
+            max-height: 1000px;
+            overflow-y: auto;
+            padding-right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+          "
+        >
+          <!-- Feedback Cards -->
+        <div class="feedback-card">
+            <div class="feedback-content">
+              <div class="client-image"></div>
+              <div class="feedback-text">
+                <span class="quote">“</span>
+                <p class="feedback">
+                  Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+                  accumsan. Id leo urna velit neque mattis id tellus arcu
+                  condimentum. Augue dictum dolor elementum convallis dignissim
+                  malesuada commodo ultrices.
+                </p>
+                <h4 class="client-name">Name</h4>
+                <p class="client-position">CEO</p>
+              </div>
+              <span class="quote">“</span>
+            </div>
+          </div>
+  
+          <div class="feedback-card">
+            <div class="feedback-content">
+              <div class="client-image"></div>
+              <div class="feedback-text">
+                <span class="quote">“</span>
+                <p class="feedback">
+                  Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+                  accumsan. Id leo urna velit neque mattis id tellus arcu
+                  condimentum. Augue dictum dolor elementum convallis dignissim
+                  malesuada commodo ultrices.
+                </p>
+                <h4 class="client-name">Name</h4>
+                <p class="client-position">CEO</p>
+              </div>
+              <span class="quote">“</span>
+            </div>
+          </div>
+  
+          <div class="feedback-card">
+            <div class="feedback-content">
+              <div class="client-image"></div>
+              <div class="feedback-text">
+                <span class="quote">“</span>
+                <p class="feedback">
+                  Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+                  accumsan. Id leo urna velit neque mattis id tellus arcu
+                  condimentum. Augue dictum dolor elementum convallis dignissim
+                  malesuada commodo ultrices.
+                </p>
+                <h4 class="client-name">Name</h4>
+                <p class="client-position">CEO</p>
+              </div>
+              <span class="quote">“</span>
+            </div>
+          </div>
+
+          <div class="feedback-card">
+            <div class="feedback-content">
+              <div class="client-image"></div>
+              <div class="feedback-text">
+                <span class="quote">“</span>
+                <p class="feedback">
+                  Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+                  accumsan. Id leo urna velit neque mattis id tellus arcu
+                  condimentum. Augue dictum dolor elementum convallis dignissim
+                  malesuada commodo ultrices.
+                </p>
+                <h4 class="client-name">Name</h4>
+                <p class="client-position">CEO</p>
+              </div>
+              <span class="quote">“</span>
+            </div>
+          </div>
+
+          <div class="feedback-card">
+            <div class="feedback-content">
+              <div class="client-image"></div>
+              <div class="feedback-text">
+                <span class="quote">“</span>
+                <p class="feedback">
+                  Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+                  accumsan. Id leo urna velit neque mattis id tellus arcu
+                  condimentum. Augue dictum dolor elementum convallis dignissim
+                  malesuada commodo ultrices.
+                </p>
+                <h4 class="client-name">Name</h4>
+                <p class="client-position">CEO</p>
+              </div>
+              <span class="quote">“</span>
+            </div>
+          </div>
+
+          <div class="feedback-card">
+            <div class="feedback-content">
+              <div class="client-image"></div>
+              <div class="feedback-text">
+                <span class="quote">“</span>
+                <p class="feedback">
+                  Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+                  accumsan. Id leo urna velit neque mattis id tellus arcu
+                  condimentum. Augue dictum dolor elementum convallis dignissim
+                  malesuada commodo ultrices.
+                </p>
+                <h4 class="client-name">Name</h4>
+                <p class="client-position">CEO</p>
+              </div>
+              <span class="quote">“</span>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+
+        <!-- Add more feedback cards as needed -->
+      </div>
+    </section>
+
+    <!-- Contact Section from Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+      // Load navbar and footer
+      fetch("navbar-footer.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // Insert navbar
+          const navbar = doc.querySelector("nav");
+          document.getElementById("navbar-container").appendChild(navbar);
+
+          // Insert footer
+          const footer = doc.querySelector("footer");
+          document.getElementById("footer-container").appendChild(footer);
+
+          // Hamburger menu functionality
+          document
+            .querySelector(".hamburger")
+            ?.addEventListener("click", () => {
+              document.querySelector(".nav-links").classList.toggle("active");
+            });
+
+          document.querySelectorAll(".nav-links a").forEach((link) => {
+            link.addEventListener("click", () => {
+              document.querySelector(".nav-links").classList.remove("active");
+            });
+          });
+        });
+    </script>
+  </body>
+</html>
